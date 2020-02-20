@@ -16,6 +16,8 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
   )
 
   attr_accessor(
+    :outstr,
+
     :example_running,
     :current_example_index,
     :group_level,
@@ -28,21 +30,23 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
   )
 
   def initialize(output)
-    @output = output
+    @outstr                = output
+
+    @example_running       = false
+    @current_example_index = 0
+    @group_level           = 0
+    @messages              = []
+
+    @total_count           = 0
+    @passed_count          = 0
+    @pending_count         = 0
+    @failed_count          = 0
+
     super
   end
 
   def start(notification)
-    self.example_running       = false
-    self.current_example_index = 0
-    self.group_level           = 0
-    self.messages              = []
-
-    self.total_count           = notification.count
-    self.passed_count          = 0
-    self.pending_count         = 0
-    self.failed_count          = 0
-
+    self.total_count = notification.count
     super
   end
 
@@ -52,8 +56,8 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
   end
 
   def example_group_started(notification)
-    @output.puts() if self.group_level == 0
-    @output.puts("#{group_progress()} #{current_indentation}#{notification.group.description.strip}")
+    self.outstr.puts() if self.group_level == 0
+    self.outstr.puts("#{group_progress()} #{current_indentation}#{notification.group.description.strip}")
 
     self.group_level += 1
   end
@@ -63,7 +67,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
   end
 
   def example_passed(passed)
-    @output.puts(passed_output(passed.example))
+    self.outstr.puts(passed_output(passed.example))
     flush_messages
 
     self.passed_count   += 1
@@ -71,7 +75,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
   end
 
   def example_pending(pending)
-    @output.puts(
+    self.outstr.puts(
       pending_output(
         pending.example,
         pending.example.execution_result.pending_message
@@ -85,7 +89,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
   end
 
   def example_failed(failure)
-    @output.puts(failure_output(failure.example))
+    self.outstr.puts(failure_output(failure.example))
     flush_messages
 
     self.failed_count   += 1
@@ -96,7 +100,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
     if self.example_running
       self.messages << notification.message
     else
-      @output.puts("#{group_progress()} #{current_indentation}#{notification.message}")
+      self.outstr.puts("#{group_progress()} #{current_indentation}#{notification.message}")
     end
   end
 
@@ -104,7 +108,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
 
     def flush_messages
       self.messages.each do |message|
-        @output.puts("#{group_progress()} #{current_indentation(1)}#{message}")
+        self.outstr.puts("#{group_progress()} #{current_indentation(1)}#{message}")
       end
 
       self.messages.clear
