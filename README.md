@@ -1,4 +1,4 @@
-# Papercut
+# Doggo
 
 [![License](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
