@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'doggo'
   s.version     = '0.0.1'
   s.date        = '2020-02-21'
-  s.summary     = 'RSpec documentation format with progress indication'
+  s.summary     = 'RSpec formatter - documentation, with progress indication'
   s.description = 'Similar to RSpec -f d, but adds indication of test number and total tests on each line'
   s.authors     = ['RIP Global Limited', 'Andrew David Hodgkinson']
   s.email       = ['andrew@ripglobal.com']
