@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doggo (0.0.1)
+    doggo (0.0.2)
       rspec-core (~> 3.0)
 
 GEM
@@ -15,7 +15,7 @@ GEM
       rspec-mocks (~> 3.9.0)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
-    rspec-expectations (3.9.0)
+    rspec-expectations (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-mocks (3.9.1)
@@ -32,4 +32,4 @@ DEPENDENCIES
   rspec (~> 3.7)
 
 BUNDLED WITH
-   2.0.2
+   2.1.4

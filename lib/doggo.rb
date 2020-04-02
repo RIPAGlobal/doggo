@@ -24,6 +24,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
     :messages,
 
     :total_count,
+    :pad,
     :passed_count,
     :pending_count,
     :failed_count
@@ -38,6 +39,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
     @messages              = []
 
     @total_count           = 0
+    @pad                   = nil
     @passed_count          = 0
     @pending_count         = 0
     @failed_count          = 0
@@ -47,6 +49,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
 
   def start(notification)
     self.total_count = notification.count
+    self.pad         = notification.count.to_s.size
     super
   end
 
@@ -57,7 +60,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
 
   def example_group_started(notification)
     self.outstr.puts() if self.group_level == 0
-    self.outstr.puts("#{group_progress()} #{current_indentation}#{notification.group.description.strip}")
+    self.outstr.puts("#{group_progress()}#{current_indentation}#{notification.group.description.strip}")
 
     self.group_level += 1
   end
@@ -100,7 +103,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
     if self.example_running
       self.messages << notification.message
     else
-      self.outstr.puts("#{group_progress()} #{current_indentation}#{notification.message}")
+      self.outstr.puts("#{group_progress()}#{current_indentation}#{notification.message}")
     end
   end
 
@@ -108,7 +111,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
 
     def flush_messages
       self.messages.each do |message|
-        self.outstr.puts("#{group_progress()} #{current_indentation(1)}#{message}")
+        self.outstr.puts("#{group_progress()}#{current_indentation(1)}#{message}")
       end
 
       self.messages.clear
@@ -138,17 +141,16 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
       )
     end
 
-    def pad
-      @pad ||= self.total_count.to_s.size
-    end
-
     def group_progress
-      "[#{' ' * pad()} #{self.total_count}]"
+      if self.pad.nil?
+        ''
+      else
+        "[#{' ' * self.pad} #{self.total_count}] "
+      end
     end
 
     def example_progress
-      @pad ||= self.total_count.to_s.size
-      "[#{self.current_example_index.to_s.rjust(pad(), '0')}/#{self.total_count}]"
+      "[#{self.current_example_index.to_s.rjust(self.pad, '0')}/#{self.total_count}]"
     end
 
     def next_failure_index

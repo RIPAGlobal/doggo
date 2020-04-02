@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe 'Doggo examples' do
+RSpec.describe 'Doggo examples', for_example_output: true do
   context 'in a context' do
     context 'with a nested context' do
 

@@ -6,7 +6,7 @@ An  [RSpec](https://github.com/rspec) formatter that looks like `--format docume
 
 ## Example output
 
-Regenerate this with `bundle exec rspec --order defined`:
+Regenerate this with `FOR_EXAMPLE=yes bundle exec rspec --order defined`:
 
 ```
 [   10] Doggo examples
