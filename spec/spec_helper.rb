@@ -7,6 +7,12 @@ RSpec.configure do | config |
 
   config.add_formatter 'Doggo'
 
+  if ENV['FOR_EXAMPLE']
+    config.filter_run_including for_example_output: true
+  else
+    config.filter_run_excluding for_example_output: true
+  end
+
   Kernel.srand config.seed
 end
 

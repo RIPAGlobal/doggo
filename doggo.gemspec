@@ -2,11 +2,11 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'doggo'
-  s.version     = '0.0.1'
-  s.date        = '2020-02-21'
+  s.version     = '0.0.2'
+  s.date        = '2020-04-02'
   s.summary     = 'RSpec formatter - documentation, with progress indication'
   s.description = 'Similar to RSpec -f d, but adds indication of test number and total tests on each line'
-  s.authors     = ['RIP Global Limited', 'Andrew David Hodgkinson']
+  s.authors     = ['RIP Global', 'Andrew David Hodgkinson']
   s.email       = ['andrew@ripglobal.com']
   s.license     = 'MIT'
 
