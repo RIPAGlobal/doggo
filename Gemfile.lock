@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doggo (0.0.2)
+    doggo (1.0.0)
       rspec-core (~> 3.0)
 
 GEM
