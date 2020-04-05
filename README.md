@@ -43,7 +43,7 @@ gem install doggo
 ...or in a Gemfile:
 
 ```ruby
-gem 'doggo'
+gem 'doggo', '~> 1.0'
 ```
 
 ## Usage
@@ -69,3 +69,13 @@ RSpec.configure do | config |
   config.add_formatter 'Doggo'
 end
 ```
+
+## Development
+
+Doggo works with Ruby 1.9.3-p551 from November 13th 2011, but needs a far newer RubyGems version in order for its `.gemspec` file to be processed. You will therefore probably need to update RubyGems if you are doing development work on the source code and want to, for example, run `bundle update`. _Assuming you are using [rbenv](https://github.com/rbenv/rbenv)_ and have automatically (via Doggo's `.ruby-version` file) or manually (via e.g. running command `rbenv local 1.9.3-p551`) switched to Ruby 1.9.3-p551, you can safely ensure that the most recent compatible RubyGems version is installed by issuing this command:
+
+```
+gem update --system 2.7.10
+```
+
+According to the [release history](https://rubygems.org/gems/rubygems-update/versions), 2.7.10 is the last of the v2.x RubyGems releases which still supported Ruby v1.x. Version 2.7.10 was released on June 14th 2019.
