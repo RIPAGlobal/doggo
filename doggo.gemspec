@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ['RIP Global', 'Andrew David Hodgkinson']
   s.email       = ['andrew@ripglobal.com']
   s.license     = 'MIT'
-  s.homepage    = 'http://www.ripglobal.com/'
+  s.homepage    = 'https://www.ripglobal.com/'
 
   s.metadata['homepage_uri'   ] = s.homepage
   s.metadata['source_code_uri'] = 'https://github.com/ripglobal/doggo/'
