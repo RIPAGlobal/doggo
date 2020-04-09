@@ -91,7 +91,12 @@ RSpec.describe Doggo do
     context '#example_failed' do
       before :each do
         @dog.start(@notification)
+        @detail = 'failure detail'
         @failed = double('Failing test', example: @example)
+
+        allow(@failed).to receive(:fully_formatted) do | count |
+          "#{count} #{@detail}"
+        end
       end
 
       it 'notes an example is no longer running' do
@@ -116,13 +121,20 @@ RSpec.describe Doggo do
         expect(@dog.failed_count).to eql(2)
       end
 
-      it 'logs the failure' do
+      it 'logs the summary failure' do
         @dog.example_started(@notification)
         @dog.example_failed(@failed)
 
         expect(@bork.string).to include("[1/#{@notification.count}]")
         expect(@bork.string).to include('FAILED')
         expect(@bork.string).to include(@example_description)
+      end
+
+      it 'logs the detailed failure' do
+        @dog.example_started(@notification)
+        @dog.example_failed(@failed)
+
+        expect(@bork.string).to include("1 #{@detail}")
       end
     end # "context '#example_failed' do"
 
