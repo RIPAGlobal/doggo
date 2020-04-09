@@ -1,0 +1,12 @@
+language: ruby
+
+rvm:
+ - 1.9.3-p551
+ - 2.6
+ - 2.7
+
+before_install:
+ -  gem install -v 1.17.3 bundler --no-document
+
+script:
+ - bundle exec rspec
