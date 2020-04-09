@@ -71,7 +71,7 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
 
   def example_passed(passed)
     self.outstr.puts(passed_output(passed.example))
-    flush_messages
+    flush_messages()
 
     self.passed_count   += 1
     self.example_running = false
@@ -85,17 +85,21 @@ class Doggo < RSpec::Core::Formatters::BaseTextFormatter
       )
     )
 
-    flush_messages
+    flush_messages()
 
     self.pending_count  += 1
     self.example_running = false
   end
 
   def example_failed(failure)
-    self.outstr.puts(failure_output(failure.example))
-    flush_messages
+    self.failed_count += 1
 
-    self.failed_count   += 1
+    self.outstr.puts(failure_output(failure.example))
+    self.outstr.puts(failure.fully_formatted(self.failed_count))
+    self.outstr.puts("\n")
+
+    flush_messages()
+
     self.example_running = false
   end
 

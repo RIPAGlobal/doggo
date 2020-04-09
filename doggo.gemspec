@@ -2,9 +2,9 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'doggo'
-  s.version     = '1.0.0'
-  s.date        = '2020-04-06'
-  s.summary     = 'RSpec formatter - documentation, with progress indication'
+  s.version     = '1.1.0'
+  s.date        = '2020-04-09'
+  s.summary     = 'RSpec 3 formatter - documentation, with progress indication'
   s.description = 'Similar to "rspec -f d", but also indicates progress by showing the current test number and total test count on each line.'
   s.authors     = ['RIP Global', 'Andrew David Hodgkinson']
   s.email       = ['andrew@ripglobal.com']
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.metadata['homepage_uri'   ] = s.homepage
   s.metadata['source_code_uri'] = 'https://github.com/ripglobal/doggo/'
-  s.metadata['bug_tracker_uri'] = 'https://github.com/ripglobal/doggo/'
+  s.metadata['bug_tracker_uri'] = 'https://github.com/ripglobal/doggo/issues/'
   s.metadata['changelog_uri'  ] = 'https://github.com/ripglobal/doggo/blob/master/CHANGELOG.md'
 
   s.required_ruby_version = '>= 1.9.3'

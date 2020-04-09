@@ -1,5 +1,9 @@
 # Change log
 
+## v1.1.0 (2020-04-09)
+
+- Prints detailed failure messages; failing tests can be investigated while the test suite continues to run, rather than waiting for all tests to finish or halting execution at the first failed test
+
 ## v1.0.0 (2020-04-06)
 
 - Final tidying and boilerplate updates in `.gemspec` for 'v1' release

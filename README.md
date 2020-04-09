@@ -12,14 +12,56 @@ Regenerate this with `FOR_EXAMPLE=yes bundle exec rspec --order defined`:
 [   10] Doggo examples
 [01/10]   outer passes
 [02/10]   FAILED (1) - outer fails
+
+  1) Doggo examples outer fails
+     Failure/Error: expect(true).to eql(false)
+
+       expected: false
+            got: true
+
+       (compared using eql?)
+
+       Diff:
+       @@ -1,2 +1,2 @@
+       -false
+       +true
+
+     # ./spec/example/doggo_spec.rb:29:in `block (2 levels) in <top (required)>'
+
 [03/10]   PENDING - outer is pending with xit
 [04/10]   FAILED (2) - outer is pending with a custom message
+
+  2) Doggo examples outer is pending with a custom message FIXED
+     Expected pending 'custom message' to fail. No error was raised.
+     # ./spec/example/doggo_spec.rb:35
+
 [   10]   in a context
 [   10]     with a nested context
 [05/10]       passes
 [06/10]       FAILED (3) - fails
+
+  3) Doggo examples in a context with a nested context fails
+     Failure/Error: expect(true).to eql(false)
+
+       expected: false
+            got: true
+
+       (compared using eql?)
+
+       Diff:
+       @@ -1,2 +1,2 @@
+       -false
+       +true
+
+     # ./spec/example/doggo_spec.rb:12:in `block (4 levels) in <top (required)>'
+
 [07/10]       PENDING - is pending with xit
 [08/10]       FAILED (4) - is pending with a custom message
+
+  4) Doggo examples in a context with a nested context is pending with a custom message FIXED
+     Expected pending 'custom message' to fail. No error was raised.
+     # ./spec/example/doggo_spec.rb:18
+
 [   10]   test count
 [09/10]     is taken to 9
 [10/10]     is taken to 10, showing leading zero pad formatting
@@ -31,6 +73,7 @@ Notable things are:
 * Left zero padding to keep column alignment, working for any number of total tests
 * `FAILED` and `PENDING` states are shown on the left side of the message, not the right as with RSpec's `--format documentation`, to make them a little easier to see in CI output
 * A `PENDING` default message of `Temporarily skipped with xit` is suppressed for brevity, but any other message would be shown inline.
+* Detailed failure messages are shown inline, so you can start investigating test failures while your test suite continues to run.
 
 ## Installation
 
