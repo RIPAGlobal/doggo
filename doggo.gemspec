@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://www.ripaglobal.com/'
 
   s.metadata['homepage_uri'   ] = s.homepage
-  s.metadata['source_code_uri'] = 'https://github.com/ripaglobal/doggo/'
-  s.metadata['bug_tracker_uri'] = 'https://github.com/ripaglobal/doggo/issues/'
-  s.metadata['changelog_uri'  ] = 'https://github.com/ripaglobal/doggo/blob/master/CHANGELOG.md'
+  s.metadata['source_code_uri'] = 'https://github.com/RIPAGlobal/doggo/'
+  s.metadata['bug_tracker_uri'] = 'https://github.com/RIPAGlobal/doggo/issues/'
+  s.metadata['changelog_uri'  ] = 'https://github.com/RIPAGlobal/doggo/blob/master/CHANGELOG.md'
 
   s.required_ruby_version = '>= 1.9.3'
   s.bindir                = 'bin'
