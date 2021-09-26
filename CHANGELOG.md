@@ -1,5 +1,10 @@
 # Change log
 
+## v1.2.0 (2021-09-27)
+
+- RIPAA branding
+- Maintenance-only changes elsewhere, e.g. a `bundle update`; no functional alterations
+
 ## v1.1.0 (2020-04-09)
 
 - Prints detailed failure messages; failing tests can be investigated while the test suite continues to run, rather than waiting for all tests to finish or halting execution at the first failed test
