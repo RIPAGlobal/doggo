@@ -2,7 +2,7 @@
 
 ## v1.2.0 (2021-09-27)
 
-- RIPAA branding
+- RIPA branding
 - Maintenance-only changes elsewhere, e.g. a `bundle update`; no functional alterations
 
 ## v1.1.0 (2020-04-09)
