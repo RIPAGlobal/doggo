@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.summary     = 'RSpec 3 formatter - documentation, with progress indication'
   s.description = 'Similar to "rspec -f d", but also indicates progress by showing the current test number and total test count on each line.'
   s.authors     = ['RIPA Global', 'Andrew David Hodgkinson']
-  s.email       = ['andrew@ripaglobal.com']
+  s.email       = ['dev@ripaglobal.com']
   s.license     = 'MIT'
   s.homepage    = 'https://www.ripaglobal.com/'
 
