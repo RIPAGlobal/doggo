@@ -2,8 +2,8 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'doggo'
-  s.version     = '1.2.0'
-  s.date        = '2021-09-27'
+  s.version     = '1.3.0'
+  s.date        = '2023-01-13'
   s.summary     = 'RSpec 3 formatter - documentation, with progress indication'
   s.description = 'Similar to "rspec -f d", but also indicates progress by showing the current test number and total test count on each line.'
   s.authors     = ['RIPA Global', 'Andrew David Hodgkinson']

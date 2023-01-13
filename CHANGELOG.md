@@ -1,5 +1,10 @@
 # Change log
 
+
+## v1.3.0 (2023-01-13)
+
+- Add Ruby 3.1 and 3.2 to the Travis build matrix, "proving" that those versions work and marking them as officially supported.
+
 ## v1.2.0 (2021-09-27)
 
 - RIPA branding
