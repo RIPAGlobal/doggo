@@ -30,6 +30,3 @@ DEPENDENCIES
   awesome_print (~> 1.9)
   doggo!
   rspec (~> 3.10)
-
-BUNDLED WITH
-   2.4.3
