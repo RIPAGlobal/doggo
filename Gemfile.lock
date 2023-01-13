@@ -24,7 +24,7 @@ GEM
     rspec-support (3.12.0)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-22
 
 DEPENDENCIES
   awesome_print (~> 1.9)
@@ -32,4 +32,4 @@ DEPENDENCIES
   rspec (~> 3.10)
 
 BUNDLED WITH
-   1.17.3
+   2.4.3
