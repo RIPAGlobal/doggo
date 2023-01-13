@@ -17,11 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Ruby system
-      run: gem update --system 2.7.11
-      with:
-        ruby-version: ${{ matrix.ruby }}
-
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
