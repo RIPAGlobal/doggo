@@ -1,7 +1,7 @@
 # Doggo
 
 [![License](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://app.travis-ci.com/RIPAGlobal/doggo.svg?branch=master)](https://app.travis-ci.com/RIPAGlobal/doggo)
+[![Build Status](https://github.com/RIPAGlobal/doggo/actions/workflows/master.yml/badge.svg)](https://github.com/RIPAGlobal/doggo/actions)
 
 An  [RSpec](https://github.com/rspec) formatter that looks like `--format documentation`, but adds an indication of test number and overall test count at the start of each line.
 
